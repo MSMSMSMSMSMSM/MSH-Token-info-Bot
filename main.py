@@ -9,11 +9,10 @@ def check(token):
         'Content-Type': 'application/json'
     }
     res = requests.get('https://discordapp.com/api/v9/users/@me', headers=headers)
-    res = res.json()
     if (res.status_code != 200):
         return False
     else:
-        return res
+        return res.json()
 @client.event
 async def on_message(message):
     if message.content.startswith("!토큰정보"):
