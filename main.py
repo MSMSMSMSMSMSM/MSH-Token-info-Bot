@@ -22,7 +22,7 @@ async def on_message(message):
             embed = discord.Embed(title="토큰이 올바르지 않습니다.",description="",color=0xFF0000)
             await message.channel.send(embed=embed)
         else:
-            res_json = re.json()
+            res_json = re
             user_name = f'{res_json["username"]}#{res_json["discriminator"]}'
             user_id = res_json['id']
             avatar_id = res_json['avatar']
@@ -33,6 +33,6 @@ async def on_message(message):
             flags = res_json['flags']
             locale = res_json['locale']
             verified = res_json['verified']
-            embed = discord.Embed(title="토큰 정보",description=f"🎁유저 이름\n{user_name}\n🎁유저 아이디\n{user_id}\n🎁전화번호\n{phone_number}\n🎁이메일\n{email}\n🎁2차인증\b{verified}\n🎁토큰\n```cs\nPower by 미샤```")
+            embed = discord.Embed(title="토큰 정보",description=f"🎁유저 이름\n{user_name}\n🎁유저 아이디\n{user_id}\n🎁전화번호\n{phone_number}\n🎁이메일\n{email}\n🎁2차인증\n{verified}\n🎁토큰\n```cs\nPower by 미샤```")
             await message.channel.send(embed=embed)
 client.run("봇 토큰")
